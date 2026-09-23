@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #0a0a0a;
+  --color-paper: #f5f2ec;
+  --color-crimson: #b91c2e;
+  --color-line: rgba(10, 10, 10, 0.12);
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-paper: var(--color-paper);
+  --color-crimson: var(--color-crimson);
+  --color-line: var(--color-line);
+  --font-display: var(--font-bodoni);
+  --font-sans: var(--font-manrope);
+}
+
+html,
+body {
+  background: var(--color-paper);
+}
+
+body {
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-crimson);
+  color: var(--color-paper);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.char {
+  display: inline-block;
+  will-change: transform;
+}
+
+.overflow-mask {
+  overflow: hidden;
+  display: inline-block;
+}

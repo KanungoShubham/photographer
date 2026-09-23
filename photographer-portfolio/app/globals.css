@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --color-noir: #080808;
+  --color-gold: #d4af37;
+  --color-porcelain: #f5f5f5;
+}
+
+@theme inline {
+  --color-noir: var(--color-noir);
+  --color-gold: var(--color-gold);
+  --color-porcelain: var(--color-porcelain);
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+* {
+  cursor: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: auto;
+  }
+}
+
+html,
+body {
+  background: var(--color-noir);
+  overscroll-behavior: none;
+}
+
+body {
+  color: var(--color-porcelain);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-noir);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.char {
+  display: inline-block;
+  will-change: transform;
+}
+
+.overflow-mask {
+  overflow: hidden;
+  display: inline-block;
+}
