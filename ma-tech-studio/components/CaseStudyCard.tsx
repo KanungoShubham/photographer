@@ -90,7 +90,7 @@ export default function CaseStudyCard({
         alt={`${name} product preview`}
         fill
         sizes="(min-width: 768px) 25vw, 100vw"
-        className="object-cover object-top-left grayscale contrast-125 brightness-75 transition-[filter,transform] duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100"
+        className="cs-image object-cover object-top-left grayscale contrast-125 brightness-75 transition-[filter,transform] duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100"
       />
       <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-void via-void/70 to-void/20" />
 

@@ -30,8 +30,11 @@ export default function ShowcaseRow({
     const tick = () => {
       const rect = row.getBoundingClientRect();
       const vh = window.innerHeight;
-      // 0 → row just entering from the bottom, 1 → row has scrolled fully past the top
-      const raw = (vh - rect.top) / (vh + rect.height);
+      // 0 → row's top just entering from the bottom, 1 → fully revealed.
+      // Fixed reveal distance (not tied to row height) so tall stacked-mobile
+      // rows still finish revealing instead of staying stuck near-invisible.
+      const revealDistance = Math.min(vh, 640);
+      const raw = (vh - rect.top) / revealDistance;
       const progress = Math.min(Math.max(raw, 0), 1);
       const wipe = Math.min(Math.max(progress * 2.2, 0), 1);
 

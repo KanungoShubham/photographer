@@ -31,6 +31,8 @@
 html,
 body {
   background: var(--color-paper);
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -213,6 +215,7 @@ html.custom-cursor * {
 
 .cyber-cursor-dot,
 .cyber-cursor-ring {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -234,7 +237,6 @@ html.custom-cursor * {
   width: 36px;
   height: 36px;
   border: 1.5px solid var(--color-violet);
-  display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
@@ -244,4 +246,21 @@ html.custom-cursor * {
   color: var(--color-ink);
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(1px);
+}
+
+/* only shown once JS confirms a fine-pointer device and tags <html> */
+html.custom-cursor .cyber-cursor-dot {
+  display: block;
+}
+
+html.custom-cursor .cyber-cursor-ring {
+  display: flex;
+}
+
+/* touch devices can't reliably hover — show case-study images in full
+   color by default instead of leaving them stuck desaturated */
+@media (hover: none), (pointer: coarse) {
+  .cs-image {
+    filter: none !important;
+  }
 }

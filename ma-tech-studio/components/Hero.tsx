@@ -94,7 +94,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-6 py-24 text-center md:px-12"
+      className="relative flex min-h-dvh w-full flex-col items-center justify-center overflow-hidden px-6 py-24 text-center md:px-12"
     >
       <div ref={videoWrapRef} className="absolute inset-0 h-full w-full overflow-hidden">
         <video
