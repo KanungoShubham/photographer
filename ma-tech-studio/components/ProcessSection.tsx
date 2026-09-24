@@ -120,7 +120,7 @@ export default function ProcessSection() {
         setActive(true);
         observer.disconnect();
       },
-      { threshold: 0.25 }
+      { threshold: 0 }
     );
     observer.observe(section);
     return () => observer.disconnect();
